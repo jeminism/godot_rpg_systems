@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://bme0o3byulkll"]
+
+[ext_resource type="PackedScene" uid="uid://brtutxoyif8l7" path="res://Scenes/entities/enemies/enemy_entity.tscn" id="1_gephx"]
+[ext_resource type="Script" uid="uid://cu3antlglm75t" path="res://Scenes/entities/enemies/skeleton/skeleton.gd" id="2_546tx"]
+[ext_resource type="AnimationLibrary" uid="uid://bn8486h8pl080" path="res://Resources/Animations/character_animations.res" id="2_18606"]
+[ext_resource type="Script" uid="uid://l8w6l237bdoj" path="res://Resources/Entities/entity_statline.gd" id="2_f0upl"]
+[ext_resource type="Script" uid="uid://b526f7x04n7x8" path="res://Resources/Entities/damage.gd" id="3_j06f8"]
+
+[sub_resource type="Resource" id="Resource_f0upl"]
+resource_local_to_scene = true
+script = ExtResource("2_f0upl")
+max_hp = 30
+hp = 30
+max_mp = 0
+mp = 0
+armor = 0
+movement_speed = 30
+attack_speed_multiplier = 0
+magic_multiplier = 0
+physical_multiplier = 0
+poison_multiplier = 0
+pierce_multiplier = 0
+bleed_multiplier = 0
+magic_resistance = 0
+bleed_resistance = 0
+poison_resistance = 0
+pierce_resistance = 0
+metadata/_custom_type_script = "uid://l8w6l237bdoj"
+
+[sub_resource type="Resource" id="Resource_j06f8"]
+resource_local_to_scene = true
+script = ExtResource("3_j06f8")
+damage = Dictionary[int, int]({
+1: 10
+})
+metadata/_custom_type_script = "uid://b526f7x04n7x8"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vls45"]
+load_path = "res://.godot/imported/BODY_animation.png-7ff60d159ff5d22bce8b72f0c463daf3.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0upl"]
+size = Vector2(20, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j06f8"]
+size = Vector2(26, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x5rk"]
+size = Vector2(26, 45)
+
+[node name="skeleton" instance=ExtResource("1_gephx")]
+script = ExtResource("2_546tx")
+exp_value = 1
+stats = SubResource("Resource_f0upl")
+base_damage = SubResource("Resource_j06f8")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -32)
+texture = SubResource("CompressedTexture2D_vls45")
+hframes = 9
+vframes = 4
+frame = 20
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": ExtResource("2_18606")
+}
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_f0upl")
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, -25.5)
+shape = SubResource("RectangleShape2D_j06f8")
+
+[node name="CollisionShape2D" parent="hurtbox" index="0"]
+position = Vector2(0, -25.5)
+shape = SubResource("RectangleShape2D_7x5rk")

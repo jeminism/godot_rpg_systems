@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ItemDescription" load_steps=8 format=3 uid="uid://rsfcgc4rkewg"]
+
+[ext_resource type="Texture2D" uid="uid://7dsmhalklfcw" path="res://Assets/character_sprites/dagger/HEAD_robe_hood.png" id="1_bkpno"]
+[ext_resource type="Texture2D" uid="uid://godpd5qx72x3" path="res://Assets/character_sprites/spear/HEAD_robe_hood.png" id="2_urpct"]
+[ext_resource type="Texture2D" uid="uid://kld5xirhlroi" path="res://Assets/bow/HEAD_robe_hood.png" id="3_i1quj"]
+[ext_resource type="Texture2D" uid="uid://dpufnvdkpfgp5" path="res://Assets/character_sprites/walkcycle/HEAD_robe_hood.png" id="4_b52kq"]
+[ext_resource type="Script" uid="uid://bmnlq43vdfk3g" path="res://Resources/items/item_descriptor.gd" id="5_05g2g"]
+[ext_resource type="Script" uid="uid://dkuruuig3reuo" path="res://Resources/Entities/stat_modification.gd" id="6_bkpno"]
+
+[sub_resource type="Resource" id="Resource_urpct"]
+script = ExtResource("6_bkpno")
+stat_modification = Dictionary[int, int]({
+5: 10,
+10: 20
+})
+metadata/_custom_type_script = "uid://dkuruuig3reuo"
+
+[resource]
+script = ExtResource("5_05g2g")
+item_name = "Cloth Hood"
+item_description = "-"
+equip_slot = 1
+weapon_type = null
+idle_sprite = ExtResource("4_b52kq")
+attack_sprites = Dictionary[int, Texture2D]({
+1: ExtResource("1_bkpno"),
+2: ExtResource("2_urpct"),
+3: ExtResource("3_i1quj")
+})
+stat_modifications = SubResource("Resource_urpct")

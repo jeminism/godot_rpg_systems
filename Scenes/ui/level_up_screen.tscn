@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgyt1vmcorjac"]
+
+[ext_resource type="Script" uid="uid://bmvvn3ki3da01" path="res://Scenes/ui/level_up_screen.gd" id="1_1qnil"]
+[ext_resource type="PackedScene" uid="uid://cq3t6b5wlw80n" path="res://Scenes/ui/level_up_option.tscn" id="2_670lp"]
+
+[node name="level_up_screen" type="Control"]
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_1qnil")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+offset_left = -160.0
+offset_top = -96.0
+offset_bottom = 8.0
+scale = Vector2(2, 2)
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="level_up_option" parent="PanelContainer/GridContainer" instance=ExtResource("2_670lp")]
+layout_mode = 2
+
+[node name="level_up_option2" parent="PanelContainer/GridContainer" instance=ExtResource("2_670lp")]
+layout_mode = 2
+option_id = 1
+
+[node name="level_up_option3" parent="PanelContainer/GridContainer" instance=ExtResource("2_670lp")]
+layout_mode = 2
+option_id = 2
+
+[connection signal="option_selected" from="PanelContainer/GridContainer/level_up_option" to="." method="_on_level_up_option_option_selected"]
+[connection signal="option_selected" from="PanelContainer/GridContainer/level_up_option2" to="." method="_on_level_up_option_option_selected"]
+[connection signal="option_selected" from="PanelContainer/GridContainer/level_up_option3" to="." method="_on_level_up_option_option_selected"]

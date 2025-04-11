@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://pbxr0hkq63a6"]
+
+[ext_resource type="Script" uid="uid://clhsrj6fwvvtd" path="res://Resources/items/item_stats.gd" id="1_q7wbp"]
+
+[resource]
+script = ExtResource("1_q7wbp")
+hp_max = 0
+defence = 0
+speed = 0
+damage = 0

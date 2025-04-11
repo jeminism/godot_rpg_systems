@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwiwguvi6ym72"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_l4xds"]
+
+[node name="chainmail_helmet" instance=ExtResource("1_l4xds")]
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/HEAD_chain_armor_hood.png",
+2: "res://Assets/character_sprites/spear/HEAD_chain_armor_hood.png",
+3: "res://Assets/character_sprites/bow/HEAD_chain_armor_hood.png"
+})
+defence = 2
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/HEAD_chain_armor_hood.png"
+item_name = "Chainmail Coif"
+item_description = "A coif made of chainmail links."

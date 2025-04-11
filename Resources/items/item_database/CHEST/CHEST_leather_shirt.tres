@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="ItemDescription" load_steps=8 format=3 uid="uid://lbk3hdmrago3"]
+
+[ext_resource type="Texture2D" uid="uid://bu1ix5elm2t0h" path="res://Assets/character_sprites/dagger/TORSO_leather_armor_shirt_white.png" id="1_aekaw"]
+[ext_resource type="Texture2D" uid="uid://cfpudj6wof2if" path="res://Assets/character_sprites/spear/TORSO_leather_armor_shirt_white.png" id="2_cc3pm"]
+[ext_resource type="Texture2D" uid="uid://cnbjoatkl86sf" path="res://Assets/bow/TORSO_leather_armor_shirt_white.png" id="3_0444y"]
+[ext_resource type="Texture2D" uid="uid://cs77dhgpk4u8q" path="res://Assets/character_sprites/walkcycle/TORSO_leather_armor_shirt_white.png" id="4_4mpx4"]
+[ext_resource type="Script" uid="uid://bmnlq43vdfk3g" path="res://Resources/items/item_descriptor.gd" id="5_2iexa"]
+[ext_resource type="Script" uid="uid://dkuruuig3reuo" path="res://Resources/Entities/stat_modification.gd" id="6_aekaw"]
+
+[sub_resource type="Resource" id="Resource_cc3pm"]
+script = ExtResource("6_aekaw")
+stat_modification = Dictionary[int, int]({
+4: 1,
+8: 20,
+10: 20
+})
+metadata/_custom_type_script = "uid://dkuruuig3reuo"
+
+[resource]
+script = ExtResource("5_2iexa")
+item_name = "Leather Shirt"
+item_description = "-"
+equip_slot = 3
+weapon_type = null
+idle_sprite = ExtResource("4_4mpx4")
+attack_sprites = Dictionary[int, Texture2D]({
+1: ExtResource("1_aekaw"),
+2: ExtResource("2_cc3pm"),
+3: ExtResource("3_0444y")
+})
+stat_modifications = SubResource("Resource_cc3pm")

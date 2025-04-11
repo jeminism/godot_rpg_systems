@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EntityStatLine" load_steps=2 format=3 uid="uid://cynbix1ppgqd3"]
+
+[ext_resource type="Script" uid="uid://l8w6l237bdoj" path="res://Resources/Entities/entity_statline.gd" id="1_rd2ea"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_rd2ea")
+max_hp = 50
+hp = 30
+max_mp = 0
+mp = 0
+armor = 0
+movement_speed = 50
+attack_speed_multiplier = 0
+magic_multiplier = 0
+physical_multiplier = 0
+poison_multiplier = 0
+pierce_multiplier = 0
+bleed_multiplier = 0
+magic_resistance = 0
+bleed_resistance = 0
+poison_resistance = 0
+pierce_resistance = 0

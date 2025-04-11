@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bisewmis7hf0w"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_q50x1"]
+
+[node name="leather_helmet" instance=ExtResource("1_q50x1")]
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/HEAD_leather_armor_hat.png",
+2: "res://Assets/character_sprites/spear/HEAD_leather_armor_hat.png",
+3: "res://Assets/character_sprites/bow/HEAD_leather_armor_hat.png"
+})
+speed = 5
+defence = 1
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/HEAD_leather_armor_hat.png"
+item_name = "Leather Hat"
+item_description = "A leather hat. Looks like robin hood yet?"

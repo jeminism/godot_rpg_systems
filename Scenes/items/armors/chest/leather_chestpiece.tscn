@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3x3tk17n6207"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_1w52g"]
+
+[node name="leather_chestpiece" instance=ExtResource("1_1w52g")]
+armor_type = 2
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/TORSO_leather_armor_torso.png",
+2: "res://Assets/character_sprites/spear/TORSO_leather_armor_torso.png",
+3: "res://Assets/character_sprites/bow/TORSO_leather_armor_torso.png"
+})
+speed = 5
+defence = 2
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/TORSO_leather_armor_torso.png"
+item_name = "Leather Armor"
+item_description = "Reasonable protection I guess"

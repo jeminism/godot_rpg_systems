@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd5h4lo16edwr"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_t2jnj"]
+
+[node name="leather_shoulder" instance=ExtResource("1_t2jnj")]
+armor_type = 1
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/TORSO_leather_armor_shoulders.png",
+2: "res://Assets/character_sprites/spear/TORSO_leather_armor_shoulders.png",
+3: "res://Assets/character_sprites/bow/TORSO_leather_armor_shoulders.png"
+})
+speed = 5
+defence = 1
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/TORSO_leather_armor_shoulders.png"
+item_name = "Leather Spaulders"
+item_description = "Leater spaulder description."

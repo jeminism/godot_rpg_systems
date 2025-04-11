@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://blusdwd02fhix"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_15vyf"]
+
+[node name="cloth_shoes" instance=ExtResource("1_15vyf")]
+armor_type = 4
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/FEET_shoes_brown.png",
+2: "res://Assets/character_sprites/spear/FEET_shoes_brown.png",
+3: "res://Assets/character_sprites/bow/FEET_shoes_brown.png"
+})
+speed = 20
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/FEET_shoes_brown.png"
+item_name = "Cloth Shoes"
+item_description = "Comfy"

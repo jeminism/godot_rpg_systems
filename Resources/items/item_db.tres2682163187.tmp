@@ -1,0 +1,180 @@
+[gd_resource type="Resource" load_steps=25 format=3 uid="uid://dsnm7vbp4kx6n"]
+
+[ext_resource type="Script" uid="uid://bmnlq43vdfk3g" path="res://Resources/items/item_descriptor.gd" id="1_4aorw"]
+[ext_resource type="Script" uid="uid://c37w38b5ohhgf" path="res://Resources/items/item_db.gd" id="1_smjar"]
+[ext_resource type="Resource" uid="uid://rsfcgc4rkewg" path="res://Resources/items/item_database/HEAD/HEAD_cloth_hood.tres" id="2_yot7m"]
+[ext_resource type="Resource" uid="uid://drcvinwo0cott" path="res://Resources/items/item_database/HEAD/HEAD_leather_armor_hat.tres" id="3_74kyt"]
+[ext_resource type="Resource" uid="uid://bm0ycn2hqn15a" path="res://Resources/items/item_database/HEAD/HEAD_chainmail_coif.tres" id="4_ogh10"]
+[ext_resource type="Resource" uid="uid://ck6s5mr7ky6pk" path="res://Resources/items/item_database/HEAD/HEAD_plate_helmet.tres" id="5_3e6fh"]
+[ext_resource type="Resource" uid="uid://d1l5q5bhlbrtx" path="res://Resources/items/item_database/SHOULDER/SHOULDER_leather_spaulders.tres" id="6_h305t"]
+[ext_resource type="Resource" uid="uid://dp18opyds1eh3" path="res://Resources/items/item_database/SHOULDER/SHOULDER_plate_shoulderguards.tres" id="7_hhkrl"]
+[ext_resource type="Resource" uid="uid://ctv4k2g8845j8" path="res://Resources/items/item_database/CHEST/CHEST_cloth_shirt.tres" id="8_xuvok"]
+[ext_resource type="Resource" uid="uid://lbk3hdmrago3" path="res://Resources/items/item_database/CHEST/CHEST_leather_shirt.tres" id="9_giua6"]
+[ext_resource type="Script" uid="uid://dfp3c7jxjhj85" path="res://Resources/Entities/statline.gd" id="10_r3ewn"]
+
+[sub_resource type="Resource" id="Resource_4sjcp"]
+script = ExtResource("1_4aorw")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_y3l3l"]
+script = ExtResource("1_4aorw")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_hjr4p"]
+script = ExtResource("1_4aorw")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_e1kwt"]
+script = ExtResource("1_4aorw")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_5qqf7"]
+script = ExtResource("1_4aorw")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_xvxev"]
+script = ExtResource("1_4aorw")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_pvb3n"]
+script = ExtResource("1_4aorw")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_weh6t"]
+script = ExtResource("1_4aorw")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_cfmah"]
+script = ExtResource("10_r3ewn")
+max_hp = 0
+hp = 0
+max_mp = 0
+mp = 0
+armor = 0
+movement_speed = 0
+damage = 10
+attack_speed = 0
+magic_multiplier = 0
+physical_multiplier = 0
+poison_multiplier = 0
+pierce_multiplier = 0
+bleed_multiplier = 0
+magic_resistance = 0
+bleed_resistance = 0
+poison_resistance = 0
+pierce_resistance = 0
+metadata/_custom_type_script = "uid://dfp3c7jxjhj85"
+
+[sub_resource type="Resource" id="Resource_latj4"]
+script = ExtResource("1_4aorw")
+item_name = "Dagger"
+item_description = "-"
+equip_slot = 7
+weapon_type = 1
+attack_sprites = Dictionary[int, Texture2D]({})
+stat_modifications = SubResource("Resource_cfmah")
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_j425e"]
+script = ExtResource("10_r3ewn")
+max_hp = 0
+hp = 0
+max_mp = 0
+mp = 0
+armor = 0
+movement_speed = 0
+damage = 20
+attack_speed = 0
+magic_multiplier = 0
+physical_multiplier = 0
+poison_multiplier = 0
+pierce_multiplier = 0
+bleed_multiplier = 0
+magic_resistance = 0
+bleed_resistance = 0
+poison_resistance = 0
+pierce_resistance = 0
+metadata/_custom_type_script = "uid://dfp3c7jxjhj85"
+
+[sub_resource type="Resource" id="Resource_3pg57"]
+script = ExtResource("1_4aorw")
+item_name = "Spear"
+item_description = "-"
+equip_slot = 7
+weapon_type = 2
+attack_sprites = Dictionary[int, Texture2D]({})
+stat_modifications = SubResource("Resource_j425e")
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[sub_resource type="Resource" id="Resource_do6es"]
+script = ExtResource("1_4aorw")
+item_name = "Bow"
+item_description = ""
+equip_slot = 7
+weapon_type = 3
+attack_sprites = Dictionary[int, Texture2D]({})
+metadata/_custom_type_script = "uid://bmnlq43vdfk3g"
+
+[resource]
+script = ExtResource("1_smjar")
+ITEM_DESCRIPTIONS = Dictionary[int, ExtResource("1_4aorw")]({
+0: SubResource("Resource_4sjcp"),
+1: ExtResource("2_yot7m"),
+2: ExtResource("3_74kyt"),
+3: ExtResource("4_ogh10"),
+4: ExtResource("5_3e6fh"),
+5: ExtResource("6_h305t"),
+6: ExtResource("7_hhkrl"),
+7: ExtResource("8_xuvok"),
+8: ExtResource("9_giua6"),
+9: SubResource("Resource_y3l3l"),
+10: SubResource("Resource_hjr4p"),
+11: SubResource("Resource_e1kwt"),
+12: SubResource("Resource_5qqf7"),
+13: SubResource("Resource_xvxev"),
+14: SubResource("Resource_pvb3n"),
+15: SubResource("Resource_weh6t"),
+16: SubResource("Resource_latj4"),
+17: SubResource("Resource_3pg57"),
+18: SubResource("Resource_do6es")
+})

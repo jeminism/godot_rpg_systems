@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://fkuxp1nqhdrt"]
+
+[ext_resource type="Script" uid="uid://dvb004xyt0buy" path="res://Scenes/entities/health_bar.gd" id="1_aqkp1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2hgn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aqkp1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6afd"]
+bg_color = Color(0, 0.725996, 0.180862, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqkp1"]
+bg_color = Color(0.0999859, 0.099986, 0.099986, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0rdm"]
+bg_color = Color(0.657409, 0, 0.06506, 1)
+anti_aliasing = false
+
+[node name="health_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1, 1.5)
+script = ExtResource("1_aqkp1")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 4.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2hgn")
+
+[node name="health_display" type="ProgressBar" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_aqkp1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l6afd")
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="damage_display" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxFlat_aqkp1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u0rdm")
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

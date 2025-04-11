@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4mwsq2uuiaiw"]
+
+[ext_resource type="PackedScene" uid="uid://cg2vwft6sa74l" path="res://Scenes/items/weapons/weapon_item_base.tscn" id="1_jjek5"]
+
+[node name="spear" instance=ExtResource("1_jjek5")]
+weapon_type = 2
+attack_sprite_path = "res://Assets/character_sprites/spear/WEAPON_spear.png"
+damage = 20

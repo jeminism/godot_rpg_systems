@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwvnqn61tj2n4"]
+
+[ext_resource type="PackedScene" uid="uid://dqqq1okt3h61a" path="res://Scenes/entities/entity_base.tscn" id="1_103n5"]
+[ext_resource type="Script" uid="uid://cf0ym7hiofulv" path="res://Scenes/entities/character_entity.gd" id="2_103n5"]
+[ext_resource type="Script" uid="uid://dr6w6c22b4113" path="res://Scenes/entities/hitbox.gd" id="3_eiwjt"]
+[ext_resource type="Script" uid="uid://bycbf0auqkftt" path="res://Scenes/entities/player/sprite_inventory.gd" id="3_up7u6"]
+[ext_resource type="PackedScene" uid="uid://fkuxp1nqhdrt" path="res://Scenes/entities/health_bar.tscn" id="4_up7u6"]
+
+[node name="CharacterEntity" instance=ExtResource("1_103n5")]
+script = ExtResource("2_103n5")
+stats = null
+base_damage = null
+
+[node name="Sprite2D" parent="." index="0"]
+script = ExtResource("3_up7u6")
+
+[node name="head_equip" type="Sprite2D" parent="Sprite2D" index="0"]
+
+[node name="shoulder_equip" type="Sprite2D" parent="Sprite2D" index="1"]
+
+[node name="chest_equip" type="Sprite2D" parent="Sprite2D" index="2"]
+
+[node name="legs_equip" type="Sprite2D" parent="Sprite2D" index="3"]
+
+[node name="boots_equip" type="Sprite2D" parent="Sprite2D" index="4"]
+
+[node name="gloves_equip" type="Sprite2D" parent="Sprite2D" index="5"]
+
+[node name="weapon_equip" type="Sprite2D" parent="Sprite2D" index="6"]
+
+[node name="HitBox" type="Area2D" parent="." index="3"]
+script = ExtResource("3_eiwjt")
+metadata/_custom_type_script = "uid://dr6w6c22b4113"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+
+[node name="health_bar" parent="." index="4" instance=ExtResource("4_up7u6")]
+
+[connection signal="area_entered" from="HitBox" to="HitBox" method="_on_area_entered"]

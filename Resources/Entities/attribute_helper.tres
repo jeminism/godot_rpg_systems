@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ATTRIBUTE_HELPER" load_steps=2 format=3 uid="uid://chusgjk2t33d1"]
+
+[ext_resource type="Script" uid="uid://crto2ay8pqk3c" path="res://Resources/Entities/attribute_helper.gd" id="1_h1x8g"]
+
+[resource]
+script = ExtResource("1_h1x8g")
+VAR_NAMES = Dictionary[int, String]({
+0: "max_hp",
+1: "hp",
+2: "max_mp",
+3: "mp",
+4: "armor",
+5: "movement_speed",
+6: "attack_speed_multiplier",
+7: "magic_multiplier",
+8: "physical_multiplier",
+9: "poison_multiplier",
+10: "pierce_multiplier",
+11: "bleed_multiplier",
+12: "magic_resistance",
+13: "bleed_resistance",
+14: "poison_resistance",
+15: "pierce_resistance"
+})

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ldfh3r1t0fq"]
+
+[ext_resource type="PackedScene" uid="uid://cg2vwft6sa74l" path="res://Scenes/items/weapons/weapon_item_base.tscn" id="1_tnik3"]
+
+[node name="dagger" instance=ExtResource("1_tnik3")]
+weapon_type = 1
+attack_sprite_path = "res://Assets/character_sprites/dagger/WEAPON_dagger.png"
+damage = 10

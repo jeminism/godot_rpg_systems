@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5iwg3bb8umux"]
+
+[ext_resource type="PackedScene" uid="uid://cb6mvdnvndptm" path="res://Scenes/entities/projectiles/projectile_entity.tscn" id="1_mshn8"]
+[ext_resource type="Script" uid="uid://dymf1wliy74oy" path="res://Scenes/entities/projectiles/straight_line_projectile.gd" id="2_bkb67"]
+[ext_resource type="Texture2D" uid="uid://brfn17iclilkj" path="res://Assets/bow/WEAPON_arrow.png" id="3_hxgcb"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d0ala"]
+b = Vector2(24, 0)
+
+[node name="arrow" instance=ExtResource("1_mshn8")]
+script = ExtResource("2_bkb67")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_hxgcb")
+hframes = 13
+vframes = 4
+frame = 47
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" index="0"]
+position = Vector2(-1, 0)
+shape = SubResource("SegmentShape2D_d0ala")

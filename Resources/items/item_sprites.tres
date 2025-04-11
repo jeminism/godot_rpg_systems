@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b3uwvp4f8eoph"]
+
+[ext_resource type="Script" uid="uid://doyavunlkod54" path="res://Resources/items/item_sprites.gd" id="1_psok3"]
+
+[resource]
+script = ExtResource("1_psok3")
+idle_sprite = ""
+attack_sprites = Dictionary[int, String]({})

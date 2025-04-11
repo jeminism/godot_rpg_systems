@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://124tqh4iqk3m"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_44dto"]
+
+[node name="chainmail_chestpiece" instance=ExtResource("1_44dto")]
+armor_type = 2
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/TORSO_leather_armor_torso.png",
+2: "res://Assets/character_sprites/spear/TORSO_leather_armor_torso.png",
+3: "res://Assets/character_sprites/bow/TORSO_leather_armor_torso.png"
+})
+defence = 3
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/TORSO_leather_armor_torso.png"
+item_name = "Chainmail Armor"
+item_description = "Like a silk dress, but metal and not a dress"

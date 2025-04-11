@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1ut48g04uyyq"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_gs6w4"]
+
+[node name="plate_helmet" instance=ExtResource("1_gs6w4")]
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/HEAD_chain_armor_helmet.png",
+2: "res://Assets/character_sprites/spear/HEAD_chain_armor_helmet.png",
+3: "res://Assets/character_sprites/bow/HEAD_chain_armor_helmet.png"
+})
+hp_max = 5
+speed = -5
+defence = 3
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/HEAD_chain_armor_helmet.png"
+item_name = "Plate Helmet"
+item_description = "Sturdy and reliable. A little heavy though.."

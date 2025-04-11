@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="ItemDescription" load_steps=8 format=3 uid="uid://dp18opyds1eh3"]
+
+[ext_resource type="Texture2D" uid="uid://m8kix3tr3owg" path="res://Assets/character_sprites/dagger/TORSO_plate_armor_arms_shoulders.png" id="1_fns41"]
+[ext_resource type="Texture2D" uid="uid://2luucm7mrtcg" path="res://Assets/character_sprites/spear/TORSO_plate_armor_arms_shoulders.png" id="2_h2vyx"]
+[ext_resource type="Texture2D" uid="uid://bg5ia131l632o" path="res://Assets/bow/TORSO_plate_armor_arms_shoulders.png" id="3_8nees"]
+[ext_resource type="Texture2D" uid="uid://dy16xlgmnousj" path="res://Assets/character_sprites/walkcycle/TORSO_plate_armor_arms_shoulders.png" id="4_07b0g"]
+[ext_resource type="Script" uid="uid://bmnlq43vdfk3g" path="res://Resources/items/item_descriptor.gd" id="5_djis6"]
+[ext_resource type="Script" uid="uid://dkuruuig3reuo" path="res://Resources/Entities/stat_modification.gd" id="6_fns41"]
+
+[sub_resource type="Resource" id="Resource_h2vyx"]
+script = ExtResource("6_fns41")
+stat_modification = Dictionary[int, int]({
+0: 10,
+4: 2,
+8: -20
+})
+metadata/_custom_type_script = "uid://dkuruuig3reuo"
+
+[resource]
+script = ExtResource("5_djis6")
+item_name = "Plate Shoulderguards"
+item_description = "-"
+equip_slot = 2
+weapon_type = null
+idle_sprite = ExtResource("4_07b0g")
+attack_sprites = Dictionary[int, Texture2D]({
+1: ExtResource("1_fns41"),
+2: ExtResource("2_h2vyx"),
+3: ExtResource("3_8nees")
+})
+stat_modifications = SubResource("Resource_h2vyx")

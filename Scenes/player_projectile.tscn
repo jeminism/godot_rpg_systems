@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgtw27valgxqp"]
+
+[ext_resource type="Script" uid="uid://c1q7py820w38" path="res://Scripts/player_projectile.gd" id="1_2f6ks"]
+[ext_resource type="Texture2D" uid="uid://brfn17iclilkj" path="res://Assets/bow/WEAPON_arrow.png" id="2_314jq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2f6ks"]
+radius = 2.0
+height = 24.0
+
+[node name="player_projectile" type="Area2D"]
+script = ExtResource("1_2f6ks")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.857143)
+texture = ExtResource("2_314jq")
+hframes = 16
+vframes = 6
+frame = 84
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+rotation = 4.71239
+shape = SubResource("CapsuleShape2D_2f6ks")
+one_way_collision_margin = 0.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

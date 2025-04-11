@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgbmxcyvoy10c"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_aoqxs"]
+
+[node name="plate_gloves" instance=ExtResource("1_aoqxs")]
+armor_type = 2
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/HANDS_plate_armor_gloves.png",
+2: "res://Assets/character_sprites/spear/HANDS_plate_armor_gloves.png",
+3: "res://Assets/character_sprites/bow/HANDS_plate_armor_gloves.png"
+})
+hp_max = 10
+damage = -10
+defence = 1
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/HANDS_plate_armor_gloves.png"
+item_name = "Plate Gauntlets"
+item_description = "Won't bruise your knuckles with these"

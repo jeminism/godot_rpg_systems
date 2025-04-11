@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemDescription" load_steps=2 format=3 uid="uid://dn4aejftqxg13"]
+
+[ext_resource type="Script" uid="uid://bmnlq43vdfk3g" path="res://Resources/items/item_descriptor.gd" id="1_o6fbb"]
+
+[resource]
+script = ExtResource("1_o6fbb")
+item_name = ""
+item_description = ""
+equip_slot = 0
+weapon_type = 0
+attack_sprites = Dictionary[int, Texture2D]({})

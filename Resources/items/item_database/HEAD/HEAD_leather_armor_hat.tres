@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ItemDescription" load_steps=8 format=3 uid="uid://drcvinwo0cott"]
+
+[ext_resource type="Texture2D" uid="uid://b110e6vgaih38" path="res://Assets/character_sprites/dagger/HEAD_leather_armor_hat.png" id="1_mi284"]
+[ext_resource type="Texture2D" uid="uid://yfqowkw7lelw" path="res://Assets/character_sprites/spear/HEAD_leather_armor_hat.png" id="2_tw2k7"]
+[ext_resource type="Texture2D" uid="uid://bcc2p8tirmloe" path="res://Assets/bow/HEAD_leather_armor_hat.png" id="3_b5h4x"]
+[ext_resource type="Texture2D" uid="uid://dm6lm821y1dmo" path="res://Assets/character_sprites/walkcycle/HEAD_leather_armor_hat.png" id="4_hbdy5"]
+[ext_resource type="Script" uid="uid://bmnlq43vdfk3g" path="res://Resources/items/item_descriptor.gd" id="5_rnqw3"]
+[ext_resource type="Script" uid="uid://dkuruuig3reuo" path="res://Resources/Entities/stat_modification.gd" id="6_mi284"]
+
+[sub_resource type="Resource" id="Resource_tw2k7"]
+script = ExtResource("6_mi284")
+stat_modification = Dictionary[int, int]({
+4: 1,
+8: 20
+})
+metadata/_custom_type_script = "uid://dkuruuig3reuo"
+
+[resource]
+script = ExtResource("5_rnqw3")
+item_name = "Leather Hat"
+item_description = "-"
+equip_slot = 1
+weapon_type = null
+idle_sprite = ExtResource("4_hbdy5")
+attack_sprites = Dictionary[int, Texture2D]({
+1: ExtResource("1_mi284"),
+2: ExtResource("2_tw2k7"),
+3: ExtResource("3_b5h4x")
+})
+stat_modifications = SubResource("Resource_tw2k7")

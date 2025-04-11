@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuemy7p6602lw"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_m67jk"]
+
+[node name="plate_shoes" instance=ExtResource("1_m67jk")]
+armor_type = 4
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/FEET_plate_armor_shoes.png",
+2: "res://Assets/character_sprites/spear/FEET_plate_armor_shoes.png",
+3: "res://Assets/character_sprites/bow/FEET_plate_armor_shoes.png"
+})
+hp_max = 5
+speed = -10
+defence = 1
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/FEET_plate_armor_shoes.png"
+item_name = "Plate Grieves"
+item_description = "Good protection from nails."

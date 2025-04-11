@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://qa5xdapsb2dl"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_54enl"]
+
+[node name="plate_chestpiece" instance=ExtResource("1_54enl")]
+armor_type = 2
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/TORSO_plate_armor_torso.png",
+2: "res://Assets/character_sprites/spear/TORSO_plate_armor_torso.png",
+3: "res://Assets/character_sprites/bow/TORSO_plate_armor_torso.png"
+})
+hp_max = 10
+speed = -10
+defence = 5
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/TORSO_plate_armor_torso.png"
+item_name = "Plate Armor"
+item_description = "Hard to move around when you're weighed down."

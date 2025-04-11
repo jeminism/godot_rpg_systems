@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq3t6b5wlw80n"]
+
+[ext_resource type="Script" uid="uid://byox7hiu3u3di" path="res://Scenes/ui/level_up_option.gd" id="1_6xydc"]
+
+[sub_resource type="SystemFont" id="SystemFont_28xha"]
+font_names = PackedStringArray("Sans-Serif")
+multichannel_signed_distance_field = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xydc"]
+bg_color = Color(0.223103, 0.223103, 0.223103, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+
+[sub_resource type="SystemFont" id="SystemFont_6xydc"]
+font_names = PackedStringArray("Sans-Serif")
+font_weight = 325
+font_stretch = 50
+disable_embedded_bitmaps = false
+allow_system_fallback = false
+hinting = 0
+subpixel_positioning = 3
+keep_rounding_remainders = false
+multichannel_signed_distance_field = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28xha"]
+bg_color = Color(0.321823, 0.658123, 0.395475, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.61339, 0.61339, 0.61339, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uirbt"]
+bg_color = Color(0.201527, 0.201527, 0.201526, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+
+[node name="level_up_option" type="Control"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 60.0
+script = ExtResource("1_6xydc")
+
+[node name="description" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 60.0
+theme_override_fonts/font = SubResource("SystemFont_28xha")
+theme_override_font_sizes/font_size = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_6xydc")
+text = "some txt that is super long and bothersome!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="selection_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 64.0
+offset_right = 36.0
+offset_bottom = 72.0
+theme_override_fonts/font = SubResource("SystemFont_6xydc")
+theme_override_font_sizes/font_size = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28xha")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uirbt")
+toggle_mode = true
+action_mode = 0
+text = "Select"
+
+[connection signal="pressed" from="selection_button" to="." method="_on_selection_button_pressed"]

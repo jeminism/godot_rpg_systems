@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://yn7k31xak8l7"]
+
+[ext_resource type="PackedScene" uid="uid://bid2xhhhg8yv4" path="res://Scenes/entities/enemies/skeleton/skeleton_old.tscn" id="1_tf6oo"]
+[ext_resource type="Script" uid="uid://cnlhnj2eud112" path="res://Scenes/entities/enemies/berserk_skeleton/berserk_skeleton.gd" id="2_0fx4a"]
+[ext_resource type="PackedScene" uid="uid://fkuxp1nqhdrt" path="res://Scenes/entities/health_bar.tscn" id="3_5js5d"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k705x"]
+blend_mode = 2
+light_mode = 1
+
+[node name="berserk_skeleton" instance=ExtResource("1_tf6oo")]
+script = ExtResource("2_0fx4a")
+exp_value = 2
+
+[node name="Sprite2D" parent="." index="1"]
+material = SubResource("CanvasItemMaterial_k705x")
+
+[node name="health_bar2" parent="." index="5" instance=ExtResource("3_5js5d")]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0o1k6qeh5wtx"]
+
+[ext_resource type="PackedScene" uid="uid://bme0o3byulkll" path="res://Scenes/entities/enemies/skeleton/skeleton.tscn" id="1_bmhfb"]
+[ext_resource type="Script" uid="uid://cnlhnj2eud112" path="res://Scenes/entities/enemies/berserk_skeleton/berserk_skeleton.gd" id="2_k705x"]
+[ext_resource type="Script" uid="uid://l8w6l237bdoj" path="res://Resources/Entities/entity_statline.gd" id="3_5vvxt"]
+[ext_resource type="Script" uid="uid://b526f7x04n7x8" path="res://Resources/Entities/damage.gd" id="4_po1kc"]
+
+[sub_resource type="Resource" id="Resource_uggv0"]
+resource_local_to_scene = true
+script = ExtResource("3_5vvxt")
+max_hp = 50
+hp = 50
+max_mp = 0
+mp = 0
+armor = 0
+movement_speed = 40
+attack_speed_multiplier = 0
+magic_multiplier = 0
+physical_multiplier = 0
+poison_multiplier = 0
+pierce_multiplier = 0
+bleed_multiplier = 0
+magic_resistance = 0
+bleed_resistance = 0
+poison_resistance = 0
+pierce_resistance = 0
+metadata/_custom_type_script = "uid://l8w6l237bdoj"
+
+[sub_resource type="Resource" id="Resource_nepg3"]
+resource_local_to_scene = true
+script = ExtResource("4_po1kc")
+damage = Dictionary[int, int]({
+1: 10
+})
+metadata/_custom_type_script = "uid://b526f7x04n7x8"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k705x"]
+blend_mode = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vls45"]
+load_path = "res://.godot/imported/BODY_animation.png-7ff60d159ff5d22bce8b72f0c463daf3.ctex"
+
+[node name="berserk_skeleton" instance=ExtResource("1_bmhfb")]
+collision_mask = 1
+script = ExtResource("2_k705x")
+exp_value = 2
+stats = SubResource("Resource_uggv0")
+base_damage = SubResource("Resource_nepg3")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("CanvasItemMaterial_k705x")
+texture = SubResource("CompressedTexture2D_vls45")

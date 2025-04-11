@@ -1,0 +1,8 @@
+[gd_resource type="AnimationLibrary" load_steps=2 format=3 uid="uid://bcoo2urffr326"]
+
+[sub_resource type="Animation" id="Animation_chfyk"]
+
+[resource]
+_data = {
+&"walk_up": SubResource("Animation_chfyk")
+}

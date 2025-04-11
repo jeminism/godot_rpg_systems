@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5ahubi6djixh"]
+
+[ext_resource type="Script" uid="uid://b4u23wjx155lh" path="res://Scenes/game.gd" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://emo8tyrvuynr" path="res://Scenes/level.tscn" id="2_wrm1d"]
+[ext_resource type="Script" uid="uid://c6uemrlct0p8a" path="res://Scenes/level.gd" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://bf8iv8jb0vtki" path="res://Scenes/entities/player/player_entity.tscn" id="4_3dryh"]
+[ext_resource type="Script" uid="uid://l8w6l237bdoj" path="res://Resources/Entities/entity_statline.gd" id="5_i6g32"]
+[ext_resource type="Script" uid="uid://b526f7x04n7x8" path="res://Resources/Entities/damage.gd" id="6_1l0tm"]
+
+[sub_resource type="Resource" id="Resource_i6g32"]
+resource_local_to_scene = true
+script = ExtResource("5_i6g32")
+max_hp = 100
+hp = 100
+max_mp = 0
+mp = 0
+armor = 0
+movement_speed = 100
+attack_speed_multiplier = 0
+magic_multiplier = 0
+physical_multiplier = 0
+poison_multiplier = 0
+pierce_multiplier = 0
+bleed_multiplier = 0
+magic_resistance = 0
+bleed_resistance = 0
+poison_resistance = 0
+pierce_resistance = 0
+metadata/_custom_type_script = "uid://l8w6l237bdoj"
+
+[sub_resource type="Resource" id="Resource_h4fw4"]
+resource_local_to_scene = true
+script = ExtResource("6_1l0tm")
+damage = Dictionary[int, int]({})
+metadata/_custom_type_script = "uid://b526f7x04n7x8"
+
+[sub_resource type="Curve2D" id="Curve2D_wrm1d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -347, 194, 0, 0, 0, 0, -352, -231, 0, 0, 0, 0, 352, -233, 0, 0, 0, 0, 349, 193, 0, 0, 0, 0, -342, 194)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_wrm1d")
+
+[node name="Level" parent="." instance=ExtResource("2_wrm1d")]
+script = ExtResource("3_3dryh")
+
+[node name="Timer" type="Timer" parent="Level"]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
+[node name="player_entity" parent="Level" instance=ExtResource("4_3dryh")]
+unique_name_in_owner = true
+stats = SubResource("Resource_i6g32")
+base_damage = SubResource("Resource_h4fw4")
+
+[node name="Camera2D" type="Camera2D" parent="Level/player_entity"]
+position = Vector2(34, -22)
+zoom = Vector2(1.8, 1.8)
+position_smoothing_enabled = true
+
+[node name="Path2D" type="Path2D" parent="Level/player_entity"]
+position = Vector2(33, -1)
+curve = SubResource("Curve2D_wrm1d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Level/player_entity/Path2D"]
+position = Vector2(-347, 194)
+rotation = -1.58256
+
+[node name="Node2D" type="Node2D" parent="Level/player_entity/Path2D/PathFollow2D"]
+position = Vector2(14, -5)
+
+[connection signal="timeout" from="Level/Timer" to="Level" method="_on_timer_timeout"]
+[connection signal="level_up" from="Level/player_entity" to="." method="_on_player_entity_level_up"]

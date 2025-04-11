@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b00lbutevb3y0"]
+
+[ext_resource type="PackedScene" uid="uid://p7i73kkytxf2" path="res://Scenes/items/equippable_item_base.tscn" id="1_kl8yx"]
+[ext_resource type="Script" uid="uid://g65cjqjmbslj" path="res://Scenes/items/armors/armor_item_base.gd" id="2_24bgd"]
+
+[node name="armor_item_base" instance=ExtResource("1_kl8yx")]
+script = ExtResource("2_24bgd")
+armor_type = 0

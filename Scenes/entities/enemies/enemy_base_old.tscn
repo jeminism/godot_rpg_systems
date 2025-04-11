@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr0b7xrjs3dcf"]
+
+[ext_resource type="PackedScene" uid="uid://dqqq1okt3h61a" path="res://Scenes/entities/entity_base.tscn" id="1_suknx"]
+[ext_resource type="Script" uid="uid://bndhxh88cdqwf" path="res://Scenes/entities/enemies/enemy_entity.gd" id="2_0qvg7"]
+[ext_resource type="PackedScene" uid="uid://dkvhj5tobl4iy" path="res://Scenes/entities/hurtbox.tscn" id="3_308rr"]
+
+[node name="enemy_base" instance=ExtResource("1_suknx")]
+collision_mask = 17
+script = ExtResource("2_0qvg7")
+exp_value = 1
+stats = null
+base_damage = null
+
+[node name="hurtbox" parent="." index="3" instance=ExtResource("3_308rr")]
+collision_layer = 64
+collision_mask = 4

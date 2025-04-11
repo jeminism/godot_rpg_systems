@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://bf8iv8jb0vtki"]
+
+[ext_resource type="PackedScene" uid="uid://bwvnqn61tj2n4" path="res://Scenes/entities/character_entity.tscn" id="1_4qeb0"]
+[ext_resource type="Script" uid="uid://bgaap4jjrivql" path="res://Scenes/entities/player/player_entity.gd" id="2_hm1k8"]
+[ext_resource type="Script" uid="uid://l8w6l237bdoj" path="res://Resources/Entities/entity_statline.gd" id="3_of7sj"]
+[ext_resource type="AnimationLibrary" uid="uid://c102qubdtmeai" path="res://Resources/Animations/player_animations.res" id="3_vls45"]
+[ext_resource type="Script" uid="uid://b526f7x04n7x8" path="res://Resources/Entities/damage.gd" id="4_2n1bs"]
+[ext_resource type="PackedScene" uid="uid://bicb4k4kx8eye" path="res://Scenes/entities/exp_bar.tscn" id="10_ipwkp"]
+
+[sub_resource type="Resource" id="Resource_of7sj"]
+script = ExtResource("3_of7sj")
+max_hp = 100
+hp = 100
+max_mp = 0
+mp = 0
+armor = 0
+movement_speed = 100
+attack_speed_multiplier = 0
+magic_multiplier = 0
+physical_multiplier = 0
+poison_multiplier = 0
+pierce_multiplier = 0
+bleed_multiplier = 0
+magic_resistance = 0
+bleed_resistance = 0
+poison_resistance = 0
+pierce_resistance = 0
+metadata/_custom_type_script = "uid://l8w6l237bdoj"
+
+[sub_resource type="Resource" id="Resource_xv5la"]
+resource_local_to_scene = true
+script = ExtResource("4_2n1bs")
+damage = Dictionary[int, int]({})
+metadata/_custom_type_script = "uid://b526f7x04n7x8"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vls45"]
+load_path = "res://.godot/imported/BODY_animation.png-7ff60d159ff5d22bce8b72f0c463daf3.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vls45"]
+size = Vector2(20, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdwk8"]
+size = Vector2(26, 45)
+
+[node name="player_entity" instance=ExtResource("1_4qeb0")]
+script = ExtResource("2_hm1k8")
+stats = SubResource("Resource_of7sj")
+base_damage = SubResource("Resource_xv5la")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -32)
+texture = SubResource("CompressedTexture2D_vls45")
+hframes = 9
+vframes = 4
+frame = 20
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": ExtResource("3_vls45")
+}
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_vls45")
+
+[node name="HitBox" parent="." index="3"]
+collision_layer = 4
+collision_mask = 64
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, -24.5)
+shape = SubResource("RectangleShape2D_jdwk8")
+
+[node name="health_bar" parent="." index="4"]
+z_index = 2
+
+[node name="exp_bar" parent="." index="5" instance=ExtResource("10_ipwkp")]
+offset_top = 6.0
+offset_bottom = 6.0
+scale = Vector2(1, 0.5)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

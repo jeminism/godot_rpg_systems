@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd8cwkjk5ecnp"]
+
+[ext_resource type="PackedScene" uid="uid://b00lbutevb3y0" path="res://Scenes/items/armors/armor_item_base.tscn" id="1_j1kro"]
+
+[node name="cloth_hood" instance=ExtResource("1_j1kro")]
+attack_sprite_path = Dictionary[int, String]({
+0: "",
+1: "res://Assets/character_sprites/dagger/HEAD_robe_hood.png",
+2: "res://Assets/character_sprites/spear/HEAD_robe_hood.png",
+3: "res://Assets/character_sprites/bow/HEAD_robe_hood.png"
+})
+speed = 5
+damage = 5
+idle_sprite_path = "res://Assets/character_sprites/walkcycle/HEAD_robe_hood.png"
+item_name = "Cloth Hood"
+item_description = "Keeps the sun out of the eyes."
