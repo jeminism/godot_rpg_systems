@@ -31,16 +31,15 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	travel(delta)
 
-func _on_area_entered(area: HitBox) -> void:
+func _child_on_hurt() -> void:
 	#reduce the current pierce count first
 	stats.take_stat_damage(StatModification.new({ATTRIBUTE_ENUMS.TYPE.MAX_HP: -1}))
 	
-	#then activate effects 
-	for effect in effects:
-		effect.effect(self, area.get_parent()) #always trigger effects first
+	#then activate effects
+	#for effect in effects:
+		#effect.effect(self, area.get_parent()) #always trigger effects first
 		
 	#then do the child class modification if any
-	on_collision(area)
 	
 	#if pierce is 0, free the projectile
 	var remaining_pierce = stats.get_stat(ATTRIBUTE_ENUMS.TYPE.MAX_HP)
@@ -52,10 +51,6 @@ func child_ready():
 	
 #transform the position of the projectile
 func travel(delta: float):
-	return
-
-#perform an action when interacting with another HitBox
-func on_collision(area: HitBox):
 	return
 
 func get_stats():

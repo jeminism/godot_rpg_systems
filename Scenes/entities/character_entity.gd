@@ -38,10 +38,6 @@ func move():
 
 func die():
 	queue_free()
-
-#default on_hit() will just free the entity when hp drops below zero
-func on_hit():
-	pass
 	
 func on_death():
 	die()

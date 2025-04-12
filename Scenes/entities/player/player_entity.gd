@@ -128,7 +128,7 @@ func spawn_attack():
 	var modded_damage = stats.get_modded_damage(base_damage)
 	#print("base damage: ", base_damage.damage)
 	#print("modded_damage: ", modded_damage.damage)
-	projectile_instance.effects.append(EffectSpawnDuplicate.new())
+	#projectile_instance.effects.append(EffectSpawnDuplicate.new())
 	projectile_instance.init_projectile(self, projectile_position, attack_target, modded_damage, StatModification.new({ATTRIBUTE_ENUMS.TYPE.MAX_HP: 2, ATTRIBUTE_ENUMS.TYPE.MOVEMENT_SPEED: 600}))
 	get_parent().add_child(projectile_instance)
 	
