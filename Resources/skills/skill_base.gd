@@ -36,14 +36,16 @@ class_name SkillBase
 
 @export var effects: Array[EffectBase] #all effects will be applied according to the skill base
 
-func trigger(parent_entity: EntityBase, source_entity: EntityBase=null):
+func trigger(parent_entity: EntityBase, source_entity: EntityBase=null) -> bool:
 	if condition(parent_entity):
 		_do_skill(parent_entity, source_entity)
+		return true
+	return false
 
-func condition(parent_entity: EntityBase):
+func condition(parent_entity: EntityBase) -> bool:
 	return true
 	
-func _do_skill(parent_entity: EntityBase, source_entity: EntityBase=null):
+func _do_skill(parent_entity: EntityBase, source_entity: EntityBase=null) -> void:
 	for effect in effects:
 		effect.effect(parent_entity, source_entity)
 	
