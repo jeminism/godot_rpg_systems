@@ -1,17 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://cksn1wy30eqkj"]
+[gd_scene load_steps=4 format=3 uid="uid://5hj7oahplis2"]
 
-[ext_resource type="PackedScene" uid="uid://7w5lyxhl16s0" path="res://Scenes/entities/projectiles/projectile_base.tscn" id="1_poxxs"]
 [ext_resource type="Texture2D" uid="uid://brfn17iclilkj" path="res://Assets/bow/WEAPON_arrow.png" id="2_6v30g"]
-[ext_resource type="Script" uid="uid://o63lfy0ok75d" path="res://Scenes/entities/projectiles/arrow_projectile.gd" id="2_8gt8e"]
+
+[sub_resource type="GDScript" id="GDScript_ha5ch"]
+script/source = "extends \"res://Scenes/entities/projectiles/projectile_base.gd\"
+
+@export var max_pierce : int = 2
+var pierce_count = 0
+
+func travel(delta: float):
+	position += transform.x * speed * delta
+
+func on_collision(area: HitBox):
+	pierce_count += 1
+	if pierce_count > max_pierce:
+		queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gt8e"]
 size = Vector2(30, 2)
 
-[node name="arrow" instance=ExtResource("1_poxxs")]
+[node name="arrow"]
 collision_layer = 8
 collision_mask = 32
-script = ExtResource("2_8gt8e")
-max_pierce = 2
+script = SubResource("GDScript_ha5ch")
+max_pierce = null
+speed = null
+effects = null
 
 [node name="Sprite2D" parent="." index="0"]
 texture_filter = 1

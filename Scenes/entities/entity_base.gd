@@ -69,7 +69,7 @@ class SkillHandler:
 
 
 
-enum ENTITY_TYPE {NONE, CHARACTER, PROJECTILE}
+enum ENTITY_TYPE {NONE, CHARACTER, EFFECTOR}
 var entity_type: ENTITY_TYPE = ENTITY_TYPE.NONE
 
 var skill_handler: SkillHandler
@@ -87,10 +87,12 @@ func _init():
 #func _process(delta: float) -> void:
 	#skill_handler.trigger_conditionals(self)
 
-# base function to set initial direction of the entity. to be defined by child types.
+# base function to set initial direction of the entity. can be overriden by child types.
 func set_pose(	start_position: Vector2,
 				target_position: Vector2 = Vector2(0,0)):
-	pass
+	position = start_position
+	var direction = position.direction_to(target_position)
+	look_at(position+direction)
 
 func get_stats():
 	return {}

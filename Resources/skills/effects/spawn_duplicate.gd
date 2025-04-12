@@ -19,5 +19,5 @@ func effect(parent_entity: EntityBase, source_entity: EntityBase=null):
 		var instance = scene_to_spawn.instantiate()
 		var random_target = Vector2(parent_entity.position.x + rng.randi_range(-50, 50),
 									parent_entity.position.y + rng.randi_range(-50, 50))
-		instance.init_projectile(parent_entity.parent_entity, parent_entity.position, random_target, parent_entity.base_damage, StatModification.new(parent_entity.get_stats()))
+		instance.init_effector(parent_entity.parent_entity, parent_entity.position, random_target, parent_entity.base_damage, StatModification.new(parent_entity.get_stats()))
 		parent_entity.get_parent().add_child(instance)

@@ -9,7 +9,7 @@ var parent_entity: CharacterEntity #the triggering character entity
 
 @onready var hurtbox = $hurtbox
 
-func init_projectile(	parent_entity: CharacterEntity, 
+func init_effector(	parent_entity: CharacterEntity, 
 						start_position: Vector2,
 						target_position: Vector2 = Vector2(0,0),
 						damage: HealthDamage = HealthDamage.new({}), 
@@ -23,13 +23,13 @@ func init_projectile(	parent_entity: CharacterEntity,
 
 
 func _ready():
-	entity_type = ENTITY_TYPE.PROJECTILE
+	entity_type = ENTITY_TYPE.EFFECTOR
 	hurtbox.set_damage(base_damage)
 	child_ready()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	travel(delta)
+	transform_geometry(delta)
 
 func _child_on_hurt() -> void:
 	#reduce the current pierce count first
@@ -49,8 +49,8 @@ func _child_on_hurt() -> void:
 func child_ready():
 	pass
 	
-#transform the position of the projectile
-func travel(delta: float):
+#transform the position of the effector
+func transform_geometry(delta: float):
 	return
 
 func get_stats():

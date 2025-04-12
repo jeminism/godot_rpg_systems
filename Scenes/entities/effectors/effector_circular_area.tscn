@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://nomjl61ht20x"]
+
+[ext_resource type="PackedScene" uid="uid://cb6mvdnvndptm" path="res://Scenes/entities/effectors/effector_entity.tscn" id="1_fqruq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yevgs"]
+
+[node name="EffectorCircularArea" instance=ExtResource("1_fqruq")]
+
+[node name="CollisionShape2D" parent="hurtbox" index="0"]
+shape = SubResource("CircleShape2D_yevgs")
