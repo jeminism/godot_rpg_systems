@@ -11,5 +11,5 @@ func set_damage(value : HealthDamage):
 	damage = value
 	
 func _on_area_entered(area: HitBox) -> void:
-	print("area_entered")
+	#print("area_entered")
 	get_parent().on_hurt(area.get_parent())

@@ -17,7 +17,7 @@ func init_effector(	_parent_entity: CharacterEntity,
 						target_position: Vector2 = Vector2(0,0),
 						damage: HealthDamage = HealthDamage.new({}), 
 						stat_modification: StatModification = StatModification.new({})):
-	print("init effector with parent; ", _parent_entity)
+	#print("init effector with parent; ", _parent_entity)
 	parent_entity = _parent_entity
 	base_damage = damage
 	if not stats:
