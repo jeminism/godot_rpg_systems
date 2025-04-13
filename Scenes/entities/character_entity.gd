@@ -9,9 +9,22 @@ class_name CharacterEntity
 @onready var health_bar = $health_bar
 @onready var hit_box = $HitBox
 
+func child_init():
+	entity_type = ENTITY_TYPE.CHARACTER
+	
+	
+func init_character(start_position: Vector2,
+				target_position: Vector2 = Vector2(0,0),
+				damage: HealthDamage = HealthDamage.new({}), 
+				stat_modification: StatModification = StatModification.new({})):
+	base_damage = damage
+	if not stats:
+		stats = StatLine.new()
+	stats.take_stat_damage(stat_modification)
+	set_pose(start_position, target_position)
+	
 func _ready():
 	
-	entity_type = ENTITY_TYPE.CHARACTER
 	#_connect_health_update()
 	_connect_health_update()
 	_child_ready()
@@ -38,10 +51,6 @@ func move():
 
 func die():
 	queue_free()
-
-#default on_hit() will just free the entity when hp drops below zero
-func on_hit():
-	pass
 	
 func on_death():
 	die()

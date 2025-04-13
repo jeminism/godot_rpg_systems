@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://nomjl61ht20x"]
+
+[ext_resource type="PackedScene" uid="uid://cb6mvdnvndptm" path="res://Scenes/entities/effectors/effector_entity.tscn" id="1_fqruq"]
+[ext_resource type="Script" uid="uid://d1r56eanbtvyr" path="res://Scenes/entities/effectors/static_area.gd" id="2_8pmop"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yevgs"]
+
+[node name="EffectorCircularArea" instance=ExtResource("1_fqruq")]
+script = ExtResource("2_8pmop")
+max_targets = 1
+
+[node name="CollisionShape2D" parent="hurtbox" index="0"]
+shape = SubResource("CircleShape2D_yevgs")
+debug_color = Color(0.998354, 0, 0.144163, 0.42)

@@ -9,7 +9,7 @@ var item_db = preload("res://Resources/items/item_db.tres")
 
 #var projectile = preload("res://Scenes/entities/projectiles/arrow_projectile.tscn")
 
-var projectile = preload("res://Scenes/entities/projectiles/arrow.tscn")
+var projectile = preload("res://Scenes/entities/effectors/arrow.tscn")
 
 #movement
 var can_attack = true
@@ -43,6 +43,7 @@ var inventory: Array[ITEM_ENUMS.ITEM_LIST]= []
 
 ########################################
 func _child_ready():
+	add_skill(skill_library.skill_dictionary["AUTO_ATTACK"])
 	var default_equip = {
 		ITEM_ENUMS.EQUIP_SLOTS.WEAPON: ITEM_ENUMS.ITEM_LIST.DAGGER,
 		ITEM_ENUMS.EQUIP_SLOTS.HEAD: ITEM_ENUMS.ITEM_LIST.NONE,
@@ -128,8 +129,9 @@ func spawn_attack():
 	var modded_damage = stats.get_modded_damage(base_damage)
 	#print("base damage: ", base_damage.damage)
 	#print("modded_damage: ", modded_damage.damage)
-	projectile_instance.effects.append(EffectSpawnDuplicate.new())
-	projectile_instance.init_projectile(self, projectile_position, attack_target, modded_damage, StatModification.new({ATTRIBUTE_ENUMS.TYPE.MAX_HP: 2, ATTRIBUTE_ENUMS.TYPE.MOVEMENT_SPEED: 600}))
+	#projectile_instance.effects.append(EffectSpawnDuplicate.new())
+	#projectile_instance.add_skill(skill_library.skill_dictionary["ON_HIT_DUPLICATE"])
+	projectile_instance.init_effector(self, projectile_position, attack_target, modded_damage, StatModification.new({ATTRIBUTE_ENUMS.TYPE.MAX_HP: 2, ATTRIBUTE_ENUMS.TYPE.MOVEMENT_SPEED: 600}))
 	get_parent().add_child(projectile_instance)
 	
 
@@ -150,7 +152,6 @@ func do_movement(direction):
 		
 	animation_player.play("walk" + movement_post)	
 	
-	print(stats.movement_speed)
 	velocity = direction*stats.movement_speed
 
 

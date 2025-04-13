@@ -9,3 +9,7 @@ class_name HurtBox
 func set_damage(value : HealthDamage):
 	#print("hurtbox set damage: ", value.damage)
 	damage = value
+	
+func _on_area_entered(area: HitBox) -> void:
+	#print("area_entered")
+	get_parent().on_hurt(area.get_parent())
