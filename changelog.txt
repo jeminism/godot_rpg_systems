@@ -1,0 +1,16 @@
+
+v0.0.1 20250413
+---------------
+* Reworked skill system. 
+	* Skills must be triggered by entities. Created new entity of type Effector to support this.
+	* Skills of different types can be called be generic triggers in the base class, but can be overridden by child specialization
+	* All harmful objects, AOE / Projectiles, should be of EffectorEntity type. These effectors will then trigger skills on other entities
+	* Complex skills are then a combination of effects which spawn new entities which then trigger subsequent effects.
+* Refactored spawning skill implementation to be more generic
+* Auto attack skill added, can be used to automatically target and fire a projectile at a signle entity in the area. 
+
+
+
+v0.0.0 20250411
+---------------
+* Initial commit.
