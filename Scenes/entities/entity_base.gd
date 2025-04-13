@@ -108,7 +108,7 @@ func add_skill(new_skill: SkillBase):
 #generic function to trigger skills when this entity is hit by a source_entity
 func on_hit(source_entity: EntityBase):
 	_child_on_hit()
-	skill_handler.trigger_on_hits(self, source_entity)
+	skill_handler.call_deferred("trigger_on_hits", self, source_entity)
 
 func _child_on_hit():
 	pass
@@ -117,7 +117,7 @@ func _child_on_hit():
 func on_hurt(source_entity: EntityBase):
 	print("base on hurt")
 	_child_on_hurt()
-	skill_handler.trigger_on_hurts(self, source_entity)
+	skill_handler.call_deferred("trigger_on_hurts", self, source_entity)
 
 func _child_on_hurt():
 	pass
