@@ -1,24 +1,90 @@
-[gd_resource type="Resource" load_steps=7 format=3 uid="uid://2g6sf01q26po"]
+[gd_resource type="Resource" load_steps=22 format=3 uid="uid://2g6sf01q26po"]
 
 [ext_resource type="Script" uid="uid://bv5fbwkuc6vqp" path="res://Resources/skills/skill_library.gd" id="1_ce2nh"]
 [ext_resource type="Script" uid="uid://cjdu5ve4oa8ox" path="res://Resources/skills/skill_base.gd" id="2_yeib1"]
 [ext_resource type="Script" uid="uid://q1otf24hv0jo" path="res://Resources/skills/effects/effect_base.gd" id="3_hps1x"]
-[ext_resource type="Script" uid="uid://d2dki34d637oj" path="res://Resources/skills/effects/spawn_duplicate.gd" id="4_cpl5p"]
+[ext_resource type="Script" uid="uid://cvjh22ht2h2wi" path="res://Resources/skills/effects/spawn_on_parent_rand_target.gd" id="4_hps1x"]
+[ext_resource type="PackedScene" uid="uid://nomjl61ht20x" path="res://Scenes/entities/effectors/effector_circular_area.tscn" id="5_b8b8r"]
+[ext_resource type="Script" uid="uid://b526f7x04n7x8" path="res://Resources/Entities/damage.gd" id="5_bnw2c"]
+[ext_resource type="Script" uid="uid://cqlb3me2kkifl" path="res://Resources/skills/effects/spawn_base.gd" id="6_3mwk0"]
+[ext_resource type="PackedScene" uid="uid://b5iwg3bb8umux" path="res://Scenes/entities/effectors/arrow.tscn" id="6_yjeqc"]
+[ext_resource type="Script" uid="uid://cygf311c8mr1d" path="res://Resources/skills/effects/spawn_on_parent_targetted.gd" id="7_b8b8r"]
+[ext_resource type="Script" uid="uid://dkuruuig3reuo" path="res://Resources/Entities/stat_modification.gd" id="8_3mwk0"]
+[ext_resource type="Script" uid="uid://dkr1duna8k4f8" path="res://Resources/skills/skill_timer_trigger.gd" id="9_my2ji"]
 
-[sub_resource type="Resource" id="Resource_d4thp"]
-script = ExtResource("4_cpl5p")
-num_spawns = 3
-new_effects = Array[ExtResource("3_hps1x")]([])
-metadata/_custom_type_script = "uid://d2dki34d637oj"
+[sub_resource type="Resource" id="Resource_b8b8r"]
+script = ExtResource("5_bnw2c")
+damage = Dictionary[int, int]({})
+metadata/_custom_type_script = "uid://b526f7x04n7x8"
 
-[sub_resource type="Resource" id="Resource_fos4b"]
+[sub_resource type="Resource" id="Resource_my2ji"]
+script = ExtResource("5_bnw2c")
+damage = Dictionary[int, int]({
+1: 10
+})
+metadata/_custom_type_script = "uid://b526f7x04n7x8"
+
+[sub_resource type="Resource" id="Resource_bqxdx"]
+script = ExtResource("8_3mwk0")
+stat_modification = Dictionary[int, int]({
+0: 0,
+5: 100
+})
+metadata/_custom_type_script = "uid://dkuruuig3reuo"
+
+[sub_resource type="Resource" id="Resource_x2fht"]
+script = ExtResource("7_b8b8r")
+num_spawns = 1
+skills_to_impart = Array[ExtResource("2_yeib1")]([])
+scene_to_spawn = ExtResource("6_yjeqc")
+stats_to_impart = SubResource("Resource_bqxdx")
+damage_to_impart = SubResource("Resource_my2ji")
+metadata/_custom_type_script = "uid://cygf311c8mr1d"
+
+[sub_resource type="Resource" id="Resource_l7uwj"]
 script = ExtResource("2_yeib1")
 trigger_type = 3
-effects = Array[ExtResource("3_hps1x")]([SubResource("Resource_d4thp")])
+effects = Array[ExtResource("3_hps1x")]([SubResource("Resource_x2fht")])
+metadata/_custom_type_script = "uid://cjdu5ve4oa8ox"
+
+[sub_resource type="Resource" id="Resource_i57nv"]
+script = ExtResource("8_3mwk0")
+stat_modification = Dictionary[int, int]({
+2: 100
+})
+metadata/_custom_type_script = "uid://dkuruuig3reuo"
+
+[sub_resource type="Resource" id="Resource_ex42t"]
+script = ExtResource("6_3mwk0")
+num_spawns = 1
+skills_to_impart = Array[ExtResource("2_yeib1")]([SubResource("Resource_l7uwj")])
+scene_to_spawn = ExtResource("5_b8b8r")
+stats_to_impart = SubResource("Resource_i57nv")
+damage_to_impart = SubResource("Resource_b8b8r")
+metadata/_custom_type_script = "uid://cqlb3me2kkifl"
+
+[sub_resource type="Resource" id="Resource_pv3gg"]
+script = ExtResource("9_my2ji")
+duration = 1.0
+trigger_type = 1
+effects = Array[ExtResource("3_hps1x")]([SubResource("Resource_ex42t")])
+metadata/_custom_type_script = "uid://dkr1duna8k4f8"
+
+[sub_resource type="Resource" id="Resource_cpl5p"]
+script = ExtResource("4_hps1x")
+num_spawns = 1
+skills_to_impart = Array[ExtResource("2_yeib1")]([])
+metadata/_custom_type_script = "uid://cvjh22ht2h2wi"
+
+[sub_resource type="Resource" id="Resource_d4thp"]
+script = ExtResource("2_yeib1")
+trigger_type = 3
+effects = Array[ExtResource("3_hps1x")]([SubResource("Resource_cpl5p")])
 metadata/_custom_type_script = "uid://cjdu5ve4oa8ox"
 
 [resource]
 script = ExtResource("1_ce2nh")
 skill_dictionary = Dictionary[String, ExtResource("2_yeib1")]({
-"ON_HIT_DUPLICATE": SubResource("Resource_fos4b")
+"AUTO_ATTACK": SubResource("Resource_pv3gg"),
+"ON_HIT_DUPLICATE": SubResource("Resource_d4thp")
 })
