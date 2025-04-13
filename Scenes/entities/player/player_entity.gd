@@ -150,7 +150,6 @@ func do_movement(direction):
 		
 	animation_player.play("walk" + movement_post)	
 	
-	print(stats.movement_speed)
 	velocity = direction*stats.movement_speed
 
 

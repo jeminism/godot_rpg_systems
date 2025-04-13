@@ -41,7 +41,7 @@ class SkillHandler:
 		_do_skills_for_trigger(SKILL_ENUMS.TRIGGER_TYPES.ON_HIT, parent_entity, source_entity)
 		
 	func trigger_on_hurts(parent_entity: EntityBase, source_entity: EntityBase=null):
-		print("triggering on hurts")
+		#print("triggering on hurts")
 		_do_skills_for_trigger(SKILL_ENUMS.TRIGGER_TYPES.ON_HURT, parent_entity, source_entity)
 	
 	func trigger_active(skill_to_trigger: SkillBase, parent_entity: EntityBase, source_entity: EntityBase=null):
@@ -52,14 +52,14 @@ class SkillHandler:
 		
 	func _do_skills_for_trigger(trigger_type: SKILL_ENUMS.TRIGGER_TYPES, parent_entity: EntityBase, source_entity: EntityBase=null):
 		for skillinfo in skills.values():
-			print("skilll trigger")
+			#print("skilll trigger")
 			var skill = skillinfo.skill
 			var permanent = skillinfo.permanent
 			if skill.trigger_type != trigger_type:
-				print("skilll reject, ", skill.trigger_type, " | ", trigger_type)
+				#print("skilll reject, ", skill.trigger_type, " | ", trigger_type)
 				continue
 			
-			print("skilll execute")	
+			#print("skilll execute")	
 			if skill.trigger(parent_entity, source_entity) and not skillinfo.permanent:
 				remove_skill(skill)
 				
