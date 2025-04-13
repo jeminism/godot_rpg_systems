@@ -39,6 +39,7 @@ skills_to_impart = Array[ExtResource("2_yeib1")]([])
 scene_to_spawn = ExtResource("6_yjeqc")
 stats_to_impart = SubResource("Resource_bqxdx")
 damage_to_impart = SubResource("Resource_my2ji")
+lock_to_parent = false
 metadata/_custom_type_script = "uid://cygf311c8mr1d"
 
 [sub_resource type="Resource" id="Resource_l7uwj"]
@@ -50,6 +51,7 @@ metadata/_custom_type_script = "uid://cjdu5ve4oa8ox"
 [sub_resource type="Resource" id="Resource_i57nv"]
 script = ExtResource("8_3mwk0")
 stat_modification = Dictionary[int, int]({
+0: 5,
 2: 100
 })
 metadata/_custom_type_script = "uid://dkuruuig3reuo"
@@ -61,6 +63,7 @@ skills_to_impart = Array[ExtResource("2_yeib1")]([SubResource("Resource_l7uwj")]
 scene_to_spawn = ExtResource("5_b8b8r")
 stats_to_impart = SubResource("Resource_i57nv")
 damage_to_impart = SubResource("Resource_b8b8r")
+lock_to_parent = true
 metadata/_custom_type_script = "uid://cqlb3me2kkifl"
 
 [sub_resource type="Resource" id="Resource_pv3gg"]
@@ -74,6 +77,7 @@ metadata/_custom_type_script = "uid://dkr1duna8k4f8"
 script = ExtResource("4_hps1x")
 num_spawns = 1
 skills_to_impart = Array[ExtResource("2_yeib1")]([])
+lock_to_parent = false
 metadata/_custom_type_script = "uid://cvjh22ht2h2wi"
 
 [sub_resource type="Resource" id="Resource_d4thp"]
