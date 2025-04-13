@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name EntityBase
 
-var skill_library = preload("res://Resources/skills/skill_library.tres")
+var skill_library = load("res://Resources/skills/skill_library.tres")
 
 class SkillHandler:
 	#
