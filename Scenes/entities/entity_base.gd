@@ -83,9 +83,13 @@ var skill_handler: SkillHandler
 
 func _init():
 	skill_handler = SkillHandler.new()
+	child_init()
 
-#func _process(delta: float) -> void:
-	#skill_handler.trigger_conditionals(self)
+func child_init():
+	pass
+
+func _process(delta: float) -> void:
+	skill_handler.trigger_conditionals(self)
 
 # base function to set initial direction of the entity. can be overriden by child types.
 func set_pose(	start_position: Vector2,
