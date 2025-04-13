@@ -43,6 +43,7 @@ var inventory: Array[ITEM_ENUMS.ITEM_LIST]= []
 
 ########################################
 func _child_ready():
+	add_skill(skill_library.skill_dictionary["AUTO_ATTACK"])
 	var default_equip = {
 		ITEM_ENUMS.EQUIP_SLOTS.WEAPON: ITEM_ENUMS.ITEM_LIST.DAGGER,
 		ITEM_ENUMS.EQUIP_SLOTS.HEAD: ITEM_ENUMS.ITEM_LIST.NONE,
@@ -129,6 +130,7 @@ func spawn_attack():
 	#print("base damage: ", base_damage.damage)
 	#print("modded_damage: ", modded_damage.damage)
 	#projectile_instance.effects.append(EffectSpawnDuplicate.new())
+	#projectile_instance.add_skill(skill_library.skill_dictionary["ON_HIT_DUPLICATE"])
 	projectile_instance.init_effector(self, projectile_position, attack_target, modded_damage, StatModification.new({ATTRIBUTE_ENUMS.TYPE.MAX_HP: 2, ATTRIBUTE_ENUMS.TYPE.MOVEMENT_SPEED: 600}))
 	get_parent().add_child(projectile_instance)
 	
