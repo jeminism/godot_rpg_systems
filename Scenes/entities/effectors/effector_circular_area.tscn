@@ -7,6 +7,7 @@
 
 [node name="EffectorCircularArea" instance=ExtResource("1_fqruq")]
 script = ExtResource("2_8pmop")
+max_targets = 1
 
 [node name="CollisionShape2D" parent="hurtbox" index="0"]
 shape = SubResource("CircleShape2D_yevgs")
