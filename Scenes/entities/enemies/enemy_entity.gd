@@ -20,9 +20,9 @@ func _child_ready():
 	#stats.damage_changed.connect(hurtbox.set_damage)
 	
 func _physics_process(delta: float) -> void:
-	var player_position = get_parent().find_child("player_entity").position
-	var direction = position.direction_to(player_position)
-	velocity = direction*stats.movement_speed
+	#var player_position = get_parent().find_child("player_entity").position
+	#var direction = position.direction_to(player_position)
+	#velocity = direction*stats.movement_speed
 	animate()
 	move()
 

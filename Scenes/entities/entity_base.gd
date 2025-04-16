@@ -80,6 +80,7 @@ var skill_handler: SkillHandler
 @onready var collision = $CollisionShape2D
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
+@onready var behavior_root = $RootNode
 
 func _init():
 	skill_handler = SkillHandler.new()
@@ -89,7 +90,8 @@ func child_init():
 	pass
 
 func _process(delta: float) -> void:
-	skill_handler.trigger_conditionals(self)
+	behavior_root.tick(self)
+	#skill_handler.trigger_conditionals(self)
 
 # base function to set initial direction of the entity. can be overriden by child types.
 func set_pose(	start_position: Vector2,

@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://brtutxoyif8l7"]
+[gd_scene load_steps=12 format=3 uid="uid://brtutxoyif8l7"]
 
 [ext_resource type="PackedScene" uid="uid://bwvnqn61tj2n4" path="res://Scenes/entities/character_entity.tscn" id="1_ywiui"]
 [ext_resource type="Script" uid="uid://bndhxh88cdqwf" path="res://Scenes/entities/enemies/enemy_entity.gd" id="2_1htf5"]
 [ext_resource type="PackedScene" uid="uid://dkvhj5tobl4iy" path="res://Scenes/entities/hurtbox.tscn" id="2_qs8s5"]
 [ext_resource type="Script" uid="uid://l8w6l237bdoj" path="res://Resources/Entities/entity_statline.gd" id="3_goxk3"]
 [ext_resource type="Script" uid="uid://b526f7x04n7x8" path="res://Resources/Entities/damage.gd" id="4_vjrht"]
+[ext_resource type="PackedScene" uid="uid://gydr5wttn1hm" path="res://Scenes/behavior/control_nodes/if_then_else.tscn" id="6_2se1q"]
+[ext_resource type="PackedScene" uid="uid://5ndxj16caycw" path="res://Scenes/behavior/action_nodes/area/player_in_proximity_condition.tscn" id="7_kaakm"]
+[ext_resource type="PackedScene" uid="uid://dfyfg8mxy6tw0" path="res://Scenes/behavior/action_nodes/movement/stop_action.tscn" id="8_x5x8v"]
+[ext_resource type="PackedScene" uid="uid://dmnjtocmi32qb" path="res://Scenes/behavior/action_nodes/movement/move_to_player_action.tscn" id="9_cfjgq"]
 
 [sub_resource type="Resource" id="Resource_7bmpr"]
 resource_local_to_scene = true
@@ -49,3 +53,12 @@ collision_layer = 64
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" index="0"]
+
+[node name="IfThenElse" parent="RootNode" index="0" instance=ExtResource("6_2se1q")]
+
+[node name="PlayerInProximityCondition" parent="RootNode/IfThenElse" index="0" instance=ExtResource("7_kaakm")]
+radius = 10
+
+[node name="StopNode" parent="RootNode/IfThenElse" index="1" instance=ExtResource("8_x5x8v")]
+
+[node name="MoveToPlayerAction" parent="RootNode/IfThenElse" index="2" instance=ExtResource("9_cfjgq")]

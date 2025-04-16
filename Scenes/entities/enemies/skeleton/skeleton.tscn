@@ -76,3 +76,6 @@ shape = SubResource("RectangleShape2D_j06f8")
 [node name="CollisionShape2D" parent="hurtbox" index="0"]
 position = Vector2(0, -25.5)
 shape = SubResource("RectangleShape2D_7x5rk")
+
+[node name="MoveToPlayerAction" parent="RootNode/IfThenElse" index="2"]
+speed = 30

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqqq1okt3h61a"]
+[gd_scene load_steps=3 format=3 uid="uid://dqqq1okt3h61a"]
 
 [ext_resource type="Script" uid="uid://clp5dqnpge168" path="res://Scenes/entities/entity_base.gd" id="1_ats3l"]
+[ext_resource type="PackedScene" uid="uid://6batuqr1ycuj" path="res://Scenes/behavior/primitives/root_node.tscn" id="2_fkhqg"]
 
 [node name="EntityBase" type="CharacterBody2D" groups=["active_skills", "conditional_skills", "on_hit_skills", "on_hurt_skills"]]
 script = ExtResource("1_ats3l")
@@ -10,3 +11,5 @@ script = ExtResource("1_ats3l")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="RootNode" parent="." instance=ExtResource("2_fkhqg")]
