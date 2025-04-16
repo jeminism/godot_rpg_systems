@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfyfg8mxy6tw0"]
+
+[ext_resource type="PackedScene" uid="uid://dn4vtl7hyvkqt" path="res://Scenes/behavior/action_nodes/movement/movement_node.tscn" id="1_j6t8u"]
+[ext_resource type="Script" uid="uid://cnwrln1lhn2iw" path="res://Scenes/behavior/action_nodes/movement/stop_action.gd" id="2_j6t8u"]
+
+[node name="StopAction" instance=ExtResource("1_j6t8u")]
+script = ExtResource("2_j6t8u")

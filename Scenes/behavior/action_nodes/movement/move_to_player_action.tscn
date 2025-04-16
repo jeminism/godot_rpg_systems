@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmnjtocmi32qb"]
+
+[ext_resource type="PackedScene" uid="uid://dn4vtl7hyvkqt" path="res://Scenes/behavior/action_nodes/movement/movement_node.tscn" id="1_3bi6j"]
+[ext_resource type="Script" uid="uid://boqve2wakmyoq" path="res://Scenes/behavior/action_nodes/movement/move_to_player_action.gd" id="2_3bi6j"]
+
+[node name="MoveToPlayerAction" instance=ExtResource("1_3bi6j")]
+script = ExtResource("2_3bi6j")

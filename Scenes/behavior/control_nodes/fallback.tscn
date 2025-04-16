@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d244chjitv712"]
+
+[ext_resource type="PackedScene" uid="uid://1n3em555x7bb" path="res://Scenes/behavior/control_nodes/control_node.tscn" id="1_knflr"]
+[ext_resource type="Script" uid="uid://dfd4qws5n6oxf" path="res://Scenes/behavior/control_nodes/fallback.gd" id="2_ervd1"]
+
+[node name="Fallback" instance=ExtResource("1_knflr")]
+script = ExtResource("2_ervd1")

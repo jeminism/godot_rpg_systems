@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0oa1pi7mothn"]
+
+[ext_resource type="PackedScene" uid="uid://1n3em555x7bb" path="res://Scenes/behavior/control_nodes/control_node.tscn" id="1_4yvbs"]
+[ext_resource type="Script" uid="uid://dsstlutt0t7wp" path="res://Scenes/behavior/control_nodes/reactive_sequence.gd" id="1_35pqr"]
+
+[node name="ReactiveSequence" instance=ExtResource("1_4yvbs")]
+script = ExtResource("1_35pqr")
